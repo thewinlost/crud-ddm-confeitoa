@@ -1,7 +1,7 @@
 //ver se eu mantenho o id integer como auto increment
 import { Conexao } from './conexao'
 
-var db = null
+let db = null
 var atualizar=0 // use 1 para apagar e refazer a tabela ou 0 para manter os dados
 export default class DatabaseInit {
 

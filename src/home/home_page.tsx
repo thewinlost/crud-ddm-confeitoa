@@ -20,7 +20,7 @@ constructor(props) {
     pedido:Pedido,
     lista_array_dados_pedido: [],
     value: null, 
-    id_pesquisar:null, /// ver se é isso ou id_pesquisar:null
+    Id_pesquisar:null, 
     onChangeText: null,
     formularioId: null,
     formularioTelefone:null,
@@ -182,10 +182,10 @@ constructor(props) {
 
             <View style={styles.container}>
 
-                <Text style={{ fontSize: 20, paddingBottom: 20 }}>Bolos da Vitórinha</Text>
+                <Text style={{ fontSize: 20, paddingBottom: 20, color: 'pink'}}>Bolinhos da Vitória</Text>
 
                 <TextInput
-                    placeholder="digite o id Pesquisar"
+                    placeholder="id do pedido"
                     style={styles.textInput}
                     onChangeText={Id_pesquisar => { this.setState({ Id_pesquisar: Id_pesquisar }) }}
                     value={Id_pesquisar}
@@ -195,7 +195,7 @@ constructor(props) {
                     
               
                 <TextInput
-                    placeholder="digite o telefone de quem pediu"
+                    placeholder="digite o telefone do cliente"
                     style={styles.textInput}
                     // a cada letra digitada (change) ajusta o state
                     onChangeText={formularioTelefone => { this.setState({ formularioTelefone: formularioTelefone }) }}
@@ -203,7 +203,7 @@ constructor(props) {
                 />
 
                     <TextInput
-                    placeholder="digite a massa "
+                    placeholder="tipo de massa "
                     style={styles.textInput}
                     // a cada letra digitada (change) ajusta o state
                     onChangeText={formularioMassa => { this.setState({ formularioMassa: formularioMassa }) }}
@@ -212,7 +212,7 @@ constructor(props) {
                 />
 
                 <TextInput
-                    placeholder="digite  Recheio "
+                    placeholder="sabor do recheio "
                     style={styles.textInput}
                     // a cada letra digitada (change) ajusta o state
                     onChangeText={formularioRecheio => { this.setState({ formularioRecheio: formularioRecheio}) }}
@@ -221,7 +221,7 @@ constructor(props) {
                 />
 
                 <TextInput
-                    placeholder="digite  Peso "
+                    placeholder="peso do bolo "
                     style={styles.textInput}
                     // a cada letra digitada (change) ajusta o state
                     onChangeText={formularioPeso => { this.setState({ formularioPeso: formularioPeso}) }}
@@ -230,25 +230,25 @@ constructor(props) {
                 />
                
                 <View style={styles.containerTouch}>
-                    <TouchableOpacity onPress={() =>  {formularioTelefone == null  ? Alert.alert("O campo de telefone não pode ser vazio") :this.insertPedido(formularioTelefone, formularioMassa, formularioRecheio, formularioPeso)}} style={{ alignItems: "center", backgroundColor: 'green' }}>
+                    <TouchableOpacity onPress={() =>  {formularioTelefone == null  ? Alert.alert("O campo de telefone não pode ser vazio") :this.insertPedido(formularioTelefone, formularioMassa, formularioRecheio, formularioPeso)}} style={{ alignItems: "center", backgroundColor: 'pink' }}>
                         <Icon name="md-add" size={30} color="white" />
                     </TouchableOpacity>
                 </View>
 
                 <View style={styles.containerTouch}>
-                    <TouchableOpacity onPress={() =>  {formularioId == null  ? Alert.alert("Não tem Objeto para atualizar faça uma pesquisa") :this.atualizaPedido(formularioId,formularioTelefone, formularioMassa, formularioRecheio, formularioPeso)}} style={{ alignItems: "center", backgroundColor: 'green' }}>
+                    <TouchableOpacity onPress={() =>  {formularioId == null  ? Alert.alert("Não tem Objeto para atualizar faça uma pesquisa") :this.atualizaPedido(formularioId,formularioTelefone, formularioMassa, formularioRecheio, formularioPeso)}} style={{ alignItems: "center", backgroundColor: 'pink' }}>
                         <Icon name="md-refresh" size={30} color="white" />
                     </TouchableOpacity>
                 </View>
 
                 <View style={styles.containerTouch}>
-                <TouchableOpacity onPress={() => { Id_pesquisar == null ? Alert.alert("O campo de id não pode ser vazio") : this.localizaPedido(Id_pesquisar) }} style={{ alignItems: "center", backgroundColor: 'green' }}>
+                <TouchableOpacity onPress={() => { Id_pesquisar == null ? Alert.alert("O campo de id não pode ser vazio") : this.localizaPedido(Id_pesquisar) }} style={{ alignItems: "center", backgroundColor: 'pink' }}>
                         <Icon name="md-search" size={30} color="white" />
                     </TouchableOpacity>
                 </View>
 
                 <View style={styles.containerTouch}>
-                    <TouchableOpacity onPress={() => { formularioId == null ? Alert.alert("O campo de id não pode ser vazio") : this.deletePedido(Id_pesquisar) }} style={{ alignItems: "center", backgroundColor: 'green' }}>
+                    <TouchableOpacity onPress={() => { formularioId == null ? Alert.alert("O campo de id não pode ser vazio") : this.deletePedido(Id_pesquisar) }} style={{ alignItems: "center", backgroundColor: 'pink' }}>
                         <Icon text="apagar" name="md-remove" size={30} color="white" />
                     </TouchableOpacity>
                 </View>
@@ -270,7 +270,7 @@ const styles = StyleSheet.create({
         alignItems: "center", 
         width: 200, 
         height: 40, 
-        borderColor: 'gray', 
+        borderColor: '#c8c8c8', 
         borderWidth: 1 
     },
     containerTouch:{
